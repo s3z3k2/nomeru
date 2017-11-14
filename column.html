@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 文字エンコードをUTF-8に指定 -->
+    <meta charset="utf-8">
+    <!-- レンダリングを最新に指定 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- 拡大を禁止 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>コラム</title>
+
+    <!-- Semantic UI を読み込む -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
+    <!-- Vue.js を読み込む -->
+    <script src="https://unpkg.com/vue@2.3.3/dist/vue.js"></script>
+
+    <!-- 共通のCSSファイルを読み込む -->
+    <link rel="stylesheet" href="./common/nomeru-column-style.css">
+    <link rel="stylesheet" href="./common/style.css">
+
+  </head>
+  <body>
+    <!-- Vue.jsで読み込む -->
+    <div id="app">
+      <!-- ヘッダーバーのコンポーネント -->
+      <common-header current='havetoken'></common-header>
+      <!-- メニューバーのコンポーネント -->
+      <common-menu current='havetoken'></common-menu>
+
+
+      <div class="ui segment" id="titlesegment">
+        <h2>コラム</h2>
+        <!-- 基本的なコンテンツはここに記載する -->
+        <div>
+          <select id="sortindex">
+            <option>人気順</option>
+            <option>更新日順</option>
+          </select>
+
+          <input id="searchindex" placeholder="検索"/>
+        </div>
+      </div>
+
+      <div class="imgblock">
+      <a v-on:click="move1();"><img src="./img/column1.png" class="image"  v-on:click></a>
+        <a v-on:click="reset();"><img src="./img/article1.png" class="image" v-if="mode=='article1'"/></a>
+      <img src="./img/column2.png" class="image" v-on:click="move2" />
+        <a v-on:click="reset();"><img src="./img/article2.png" class="image" v-if="mode=='article2'"/></a>
+      <img src="./img/column3.png" class="image" v-on:click="move3" />
+        <a v-on:click="reset();"><img src="./img/article3.png" class="image" v-if="mode=='article3'"/></a>
+      <img src="./img/column4.png" class="image" v-on:click="move4" />
+        <a v-on:click="reset();"><img src="./img/article4.png" class="image" v-if="mode=='article4'"/></a>
+      <img src="./img/column5.png" class="image" v-on:click="move5" />
+        <a v-on:click="reset();"><img src="./img/article5.png" class="image" v-if="mode=='article5'"/></a>
+      <img src="./img/column6.png" class="image" v-on:click="move6" />
+        <a v-on:click="reset();"><img src="./img/article6.png" class="image" v-if="mode=='article6'"/></a>
+      <img src="./img/column7.png" class="image" v-on:click="move7" />
+        <a v-on:click="reset();"><img src="./img/article7.png" class="image" v-if="mode=='article7'"/></a>
+      <img src="./img/column8.png" class="image" v-on:click="move8"/>
+        <a v-on:click="reset();"><img src="./img/article8.png" class="image" v-if="mode=='article8'"/></a>
+      <img src="./img/column9.png" class="image" v-on:click="move9" />
+        <a v-on:click="reset();"><img src="./img/article9.png" class="image" v-if="mode=='article9'"/></a>
+      <img src="./img/column10.png" class="image" v-on:click="move10" />
+        <a v-on:click="reset();"><img src="./img/article10.png" class="image" v-if="mode=='article10'"/></a>
+      <img src="./img/column11.png" class="image" v-on:click="move11" />
+        <a v-on:click="reset();"><img src="./img/article11.png" class="image" v-if="mode=='article11'"/></a>
+      </div>
+
+      <common-footer></common-footer>
+    </div>
+
+    <!-- APIのURLを読み込むJavaScriptファイル -->
+    <script src="./common/config.js" charset="utf-8"></script>
+    <!-- 各ページで使うJavaScriptファイルはこの行より下で読み込む -->
+    <script src="./common/components/header.js" charset="utf-8"></script>
+    <script src="./common/components/menu.js" charset="utf-8"></script>
+    <script src="./common/components/footer.js" charset="utf-8"></script>
+    <script src="./js/column.js" charset="utf-8"></script>
+  </body>
+</html>

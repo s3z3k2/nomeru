@@ -1,0 +1,32 @@
+body {
+  background-color: #D2D2D2;
+}
+
+#titlesegment {
+  background-color: #FFFFFF;
+  height: 90px;
+}
+
+#sortindex {
+  border-radius: 3px;
+  border: 1px;
+  background-color: #DDDDDD;
+  width: 150px;
+  float: left;
+}
+
+#searchindex {
+  border-radius: 3px;
+  border: 1px;
+  background-color: #DDDDDD;
+  width: 150px;
+  float: right;
+}
+
+.image {
+  width: 95%;
+}
+
+.imgblock {
+  text-align: center;
+}

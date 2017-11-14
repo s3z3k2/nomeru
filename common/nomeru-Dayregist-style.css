@@ -1,0 +1,91 @@
+/* カレンダーナビのスタイル */
+#calendar-nav {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+#calendar-nav span {
+    display: inline-block;
+    width: 200px;
+}
+
+#calendar-nav i:hover {
+    cursor: pointer;
+}
+
+body {
+  background-color: #FFFFFF !important;
+}
+
+/* カレンダーのスタイル */
+th {
+  height: 30px;
+  font-weight: bolder;
+}
+
+.table {
+    font-size: 15px;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 250px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.button {
+  display: flex;
+  height: 50px;
+  width: 210px;
+  border: 0;
+  background-color: #F4D12D;
+  border-radius: 8px;
+  font-weight: bolder;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#calendar th:first-child {
+}
+#calendar td:first-child {
+    color: #D52858;
+}
+#calendar th:nth-child(7) {
+}
+#calendar td:nth-child(7) {
+  color: #248DC5;
+}
+
+#calendar td:hover {
+    opacity: 0.6;
+}
+
+#arrow {
+  color: #D0D0D0;
+}
+
+.caption {
+  font-size: 70%;
+}
+
+#input {
+  margin-left: 28px;
+  margin-right: 28px;
+}
+
+#cale {
+  text-align: center;
+}
+
+.plancaption {
+  font-size: 130%;
+  text-decoration: underline;
+  margin-top: 10px;
+  text-align: center;
+}

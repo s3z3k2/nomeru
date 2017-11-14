@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 文字エンコードをUTF-8に指定 -->
+    <meta charset="utf-8">
+    <!-- レンダリングを最新に指定 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- 拡大を禁止 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>飲み会日程登録</title>
+
+    <!-- Semantic UI を読み込む -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
+    <!-- Vue.js を読み込む -->
+    <script src="https://unpkg.com/vue@2.3.3/dist/vue.js"></script>
+
+    <!-- 共通のCSSファイルを読み込む -->
+    <link rel="stylesheet" href="./common/nomeru-Dayregist-style.css">
+    <link rel="stylesheet" href="./common/style.css">
+
+  </head>
+  <body>
+    <!-- Vue.jsで読み込む -->
+    <div id="app">
+
+      <!-- ヘッダーバーのコンポーネント -->
+      <common-header current='havetoken'></common-header>
+
+      <!-- メニューバーのコンポーネント -->
+      <common-menu current='havetoken'></common-menu>
+
+      <!-- スイッチバーのコンポーネント -->
+      <common-switch current='day'></common-switch>
+
+      <div id="calendar-nav">
+         <i class="chevron left icon" id="arrow" v-on:click = "moveLastMonth"></i>
+         <span>{{calData.year}}年 - {{getMonthName(calData.month)}}</span>
+         <i class="chevron right icon" id="arrow" v-on:click = "moveNextMonth"></i>
+      </div>
+      <table id="calendar" class="table table-bordered">
+         <thead>
+             <tr>
+                 <th v-for="week in weeks">{{week}}</th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr v-for="week in calendar">
+                 <td class="day" v-for="day in week" v-on:click = "dayget(day, arguments[0])">{{day.day}}</td>
+             </tr>
+         </tbody>
+      </table>
+
+      <form class="ui large form" v-on:submit.prevent = "submit">
+
+        <div class="field" id="input">
+
+          <div class="caption">
+            飲み会予定日
+          </div>
+          <div>
+            <input type="text" placeholder="カレンダーから選択してください" id="cale" v-model = "plan.datetime">
+          </div>
+
+          <div class="caption">
+            カテゴリー
+          </div>
+          <select id="categoryinput" v-model="plan.category">
+            <option>和食店・和食レストラン</option>
+            <option>焼肉屋・ホルモン焼きの店</option>
+            <option>バイキング・ビュッフェ・ブッフェ</option>
+            <option>中華料理</option>
+            <option>鍋料理店</option>
+            <option>ラーメン・つけ麺</option>
+            <option>寿司・鮨</option>
+            <option>イタリアンレストラン・フレンチレストラン</option>
+            <option>洋食屋・欧風料理店</option>
+            <option>エスニック・アジア料理店</option>
+            <option>バー・バル・ダイニングバー</option>
+          </select>
+
+        </div>
+
+        <div class="buttondiv">
+          <button class="button" type="submit">
+            飲み会を登録
+          </button>
+        </div>
+
+      </form>
+
+      <common-footer></common-footer>
+
+    </div>
+    <!-- APIのURLを読み込むJavaScriptファイル -->
+    <script src="./common/config.js" charset="utf-8"></script>
+    <!-- Menu.jsの読み込み -->
+    <script src="./common/components/header.js" charset="utf-8"></script>
+    <script src="./common/components/menu.js" charset="utf-8"></script>
+    <script src="./common/components/footer.js" charset="utf-8"></script>
+    <script src="./common/components/switch.js" charset="utf-8"></script>
+    <!-- 各ページで使うJavaScriptファイルはこの行より下で読み込む -->
+    <script src="./js/nomeru-Dayregist.js" charset="utf-8"></script>
+  </body>
+</html>
